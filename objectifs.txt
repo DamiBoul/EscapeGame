@@ -1,0 +1,48 @@
+Projet Pioupiou et Passerelle
+
+EscapeGame (on sait pas le nom)
+
+Aspects techniques
+
+Une aventure courte avec des énigmes où il faut trouver la sortie d'un bâtiment
+Le jeu se joue en vue du dessus, avec un personnage contrôlable qui peut se déplacer avec les flèches directionnelles
+Certains objets de l'environnement sont intéractifs
+L'écran suit le joueur quand il se trouve dans une même pièce
+La souris est parfois utilisée pour résoudre des mini-jeux nécessaires pour s'échapper
+Aide de jeu (bulle de pensée)
+
+Aspects graphiques
+
+À voir
+Faire attention à la cohérence, éviter les dissonances cognitives
+
+Aspects narratifs
+
+Magasin de jouets
+Un enfant se fait oublier, et se retrouve enfermé dans les toilettes après que le gardien soit parti, il doit trouver le moyen de sortir de ce magasin
+mini-jeu : faire coulisser le verou des toilettes
+salle tuto : les toilettes
+vrai jeu qui commence : la boutique, étagères, caisse/comptoir, local technique, stockage
+
+Séquences à suivre pour sortir
+
+sortie, trouver les clés
+v
+boîte à clé en hauteur
+v
+escabeau / caisses pas suffisantes
+v
+local technique porte fermée avec un verrou avec un code à chiffre  (4 chiffres avec des couleurs différentes)
+v
+chaque chiffre de la combinaison peut être trouvé à l'issue d'un mini-jeu 
+quatre objets dans la map en évidence avec la couleur en question
+1 vert  -> puzzle 
+2 bleu  -> glissière à perle
+3 rouge -> simon
+4 jaune -> taquin
+
+Easter Egg
+
+inclure un jeu de société MorpionFractal
+un chat qui dort
+"il ne faut pas réveiller le chat qui dort"
