@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-int main(int argc, char** argv){
+void TestAffichage(){
 
     //Initialisation des variables
     SDL_Window *pWindow=NULL;
@@ -101,7 +101,7 @@ int main(int argc, char** argv){
                 
                 case SDL_QUIT :
                     SDL_Quit();
-                    return(0);
+                    return(NULL);
                     break;
 
                 case SDL_KEYDOWN :
@@ -143,5 +143,75 @@ int main(int argc, char** argv){
     }
 
     SDL_Quit();
+}
+
+void TestMatrice(){
+
+    //Déclaration de variables
+    char nom_fichier[60] = "encore.bmp";
+    SDL_Surface *imageSurface;
+    Uint32 *pixels;
+    Uint32 pixel;
+    int width, height;
+    Uint32 **matrix;
+
+    //Initialisations
+    SDL_Init(SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
+
+    //Chargement de l'image
+    imageSurface = SDL_LoadBMP(nom_fichier);
+
+    //Mise en lecture de pixel
+    SDL_LockSurface(imageSurface);
+    pixels = (Uint32*)imageSurface->pixels;
+    width = imageSurface->w;
+    height = imageSurface->h;
+
+    //Initialisation de la matrice
+    matrix = malloc(height * sizeof(Uint32*));
+    
+    int i;
+    for(i=0;i<height;i++){
+        matrix[i] = malloc(width * sizeof(Uint32));
+        memcpy(matrix[i], pixels + i * width, width * sizeof(Uint32));
+    }
+
+    //Affichage de la matrice
+    int j;
+    for(i=0;i<height;i++){
+        for(j=0;j<width;j++){
+            pixel=matrix[i][j];
+            printf("%08X | ", pixel);
+        }
+        printf("\n");
+    }
+
+    //Nettoyage memoire
+    for(i=0;i<height;i++){
+        free(matrix[i]);
+    }
+    free(matrix);
+    SDL_UnlockSurface(imageSurface);
+    SDL_FreeSurface(imageSurface);
+    IMG_Quit();
+    SDL_Quit();
+
+
+}
+
+int main(int argc, char** argv){
+
+    int action;
+
+    printf("Quelle action voulez-vous faire ?\n1 - Affichage SDL\n2 - .png to matrix\n");
+    scanf("%i",&action);
+
+    switch(action){
+        case 1:TestAffichage();break;
+        case 2:TestMatrice();break;
+        default : printf("Erreur pas d'action correspondante");break;
+    }
+
     return(0);
 }
