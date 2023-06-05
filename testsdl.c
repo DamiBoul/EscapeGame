@@ -36,7 +36,7 @@ void TestAffichage(){
 
     //Image Fond
     //Chargement de l'image version Lucie
-    pSurfaceImg=IMG_Load("fond.png");
+    pSurfaceImg=IMG_Load("src/img/fond.png");
     if(!pSurfaceImg){
         printf("Erreur au chargement de l'image : (%s)\n",SDL_GetError());
         exit(EXIT_FAILURE);
@@ -64,7 +64,7 @@ void TestAffichage(){
 
     //Image Pikachu
     //Chargement de l'image version Lucie
-    pSurfaceImg=IMG_Load("pika.png");
+    pSurfaceImg=IMG_Load("src/img/pika.png");
     if(!pSurfaceImg){
         printf("Erreur au chargement de l'image : (%s)\n",SDL_GetError());
         exit(EXIT_FAILURE);
@@ -148,7 +148,7 @@ void TestAffichage(){
 void TestMatrice(){
 
     //Déclaration de variables
-    char nom_fichier[60] = "encore.bmp";
+    char nom_fichier[60] = "src/img/encore.bmp";
     SDL_Surface *imageSurface;
     Uint32 *pixels;
     Uint32 pixel;
