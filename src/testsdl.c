@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+
+#include "../lib/suis_souris.h"
 
 void TestAffichage(){
 
@@ -408,7 +407,7 @@ int main(int argc, char** argv){
 
     int action;
 
-    printf("Quelle action voulez-vous faire ?\n1 - Affichage SDL\n2 -  test raté de .png to matrix\n3 - .png to color version copiée\n4 - .png to matrix\n5 - .png to matrix avec taille variable\n");
+    printf("Quelle action voulez-vous faire ?\n1 - Affichage SDL\n2 -  test raté de .png to matrix\n3 - .png to color version copiée\n4 - .png to matrix\n5 - .png to matrix avec taille variable\n6 - Test image suis souris\n");
     scanf("%i",&action);
 
     switch(action){
@@ -417,6 +416,7 @@ int main(int argc, char** argv){
         case 3:TestMatriceGuide();break;
         case 4:TestImgToMatrix();break;
         case 5:TestImgToMatrixVariable();break;
+        case 6:TestSouris();break;
         default : printf("Erreur pas d'action correspondante");break;
     }
 
